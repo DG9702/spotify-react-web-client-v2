@@ -1,3 +1,8 @@
+# 🎧 Spotify React Web Client
+
+![gif](https://github.com/user-attachments/assets/2077cdef-f3fa-49c9-a905-9cc9ab6629fb)
+
+
 ## 🚀 Features
 
 ⚡ **Music Playback**: Play songs in real-time using the Spotify Playback SDK.
