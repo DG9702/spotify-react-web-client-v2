@@ -20,7 +20,7 @@ const FollowArtist: FC<{ id: string; onToggle: () => void; size?: number }> = ({
   const dispatch = useAppDispatch();
 
   const handleFollow = useCallback(() => {
-    userService.unfollowArtists([id]).then(() => {
+    userService.followArtists([id]).then(() => {
       dispatch(artistActions.setFollowing({ following: true }));
       onToggle();
     });
@@ -39,6 +39,9 @@ const UnfollowArtist: FC<{ id: string; onToggle: () => void; size?: number }> = 
 }) => {
   const { t } = useTranslation(['artist']);
   const dispatch = useAppDispatch();
+
+  console.log("Check unfollow Dot");
+  
 
   const handleUnfollow = useCallback(() => {
     userService.unfollowArtists([id]).then(() => {

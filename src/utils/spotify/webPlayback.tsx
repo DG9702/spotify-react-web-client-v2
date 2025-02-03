@@ -91,27 +91,22 @@ const WebPlayback: FC<WebPlaybackProps> = memo((props) => {
     });
 
     webPlaybackInstance.current.on('initialization_error', (e) => {
-      console.log('initialization_error', e);
       onPlayerError(e.message);
     });
 
     webPlaybackInstance.current.on('authentication_error', (e) => {
-      console.log('authentication_error', e);
       onPlayerError(e.message);
     });
 
     webPlaybackInstance.current.on('account_error', (e) => {
-      console.log('account_error', e);
       onPlayerError(e.message);
     });
 
     webPlaybackInstance.current.on('playback_error', (e) => {
-      console.log('playback_error', e);
       onPlayerError(e.message);
     });
 
     webPlaybackInstance.current.on('player_state_changed', async (state) => {
-      console.log(state);
       await handleState(state);
     });
 

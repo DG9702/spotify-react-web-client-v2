@@ -118,7 +118,7 @@ const followPlaylist = async (playlistId: string) => {
  * @description Add the current user as a follower of one or more artists or other Spotify users.
  */
 const followArtists = async (ids: string[]) => {
-  return await axios.put('/me/following', { type: 'artist', ids });
+  return await axios.put(`/me/following?type=artist&ids=${ids}`);
 };
 
 /**

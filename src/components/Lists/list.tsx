@@ -21,19 +21,19 @@ export function GridItemComponent(props: {
 }) {
   const { item, getDescription, onClick } = props;
 
-  if (item.type === 'track') {
+  if (item?.type === 'track') {
     return <TrackCard item={item} onClick={onClick} />;
   }
 
-  if (item.type === 'album') {
+  if (item?.type === 'album') {
     return <AlbumCard item={item} onClick={onClick} getDescription={getDescription} />;
   }
 
-  if (item.type === 'playlist') {
+  if (item?.type === 'playlist') {
     return <PlaylistCard item={item} onClick={onClick} getDescription={getDescription} />;
   }
 
-  if (item.type === 'artist') {
+  if (item?.type === 'artist') {
     return <ArtistCard item={item} onClick={onClick} getDescription={getDescription} />;
   }
 
@@ -115,9 +115,9 @@ export function GridItemList(props: {
             : undefined
         }
       >
-        {items.map((item) => {
+        {items.map((item, key) => {
           return (
-            <div key={item.uri} style={{ position: 'relative' }}>
+            <div key={key} style={{ position: 'relative' }}>
               {onItemDelete ? <DeleteButton onClick={() => onItemDelete(item)} /> : null}
               <GridItemComponent
                 item={item}
