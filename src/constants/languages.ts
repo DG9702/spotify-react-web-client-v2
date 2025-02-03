@@ -3,9 +3,9 @@ import type { Languages } from '../interfaces/languages';
 export const AVAILABLE_LANGUAGES = [
   { value: 'en', label: 'English', englishLabel: 'English' },
   {
-    value: 'es',
-    label: 'Español (Argentina)',
-    englishLabel: 'Spanish',
+    value: 'vn',
+    label: 'Việt Nam',
+    englishLabel: 'Vietnamese',
   },
 ] as {
   label: string;

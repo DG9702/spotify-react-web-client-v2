@@ -1,15 +1,11 @@
 import { Space } from 'antd';
 import { Link } from 'react-router-dom';
 
-// Utils
-import { useTranslation } from 'react-i18next';
-
 // Redux
 import { useAppSelector } from '../../../../store/store';
 import { ARTISTS_DEFAULT_IMAGE } from '../../../../constants/spotify';
 
 const Header = ({ opacity }: { opacity: number; title?: string }) => {
-  const { t } = useTranslation(['navbar']);
   const user = useAppSelector((state) => state.auth.user);
 
   return (
@@ -19,14 +15,6 @@ const Header = ({ opacity }: { opacity: number; title?: string }) => {
     >
       <div className='flex flex-row items-center'>
         <Space>
-          <a
-            target='_blank'
-            rel='noreferrer'
-            className='contact-me'
-            href='https://github.com/francoborrelli/spotify-react-web-client'
-          >
-            <span>{t('Source code')}</span>
-          </a>
 
           {/*
           <div className='news'>

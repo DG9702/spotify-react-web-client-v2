@@ -111,7 +111,7 @@ export const fecthFeaturedPlaylists = createAsyncThunk(
     const state = getState() as RootState;
     const response = await playlistService.getFeaturedPlaylists({
       limit: 10,
-      locale: state.language.language === 'es' ? 'es_AR' : undefined,
+      locale: state.language.language === 'vn' ? 'es_AR' : undefined,
     });
     return response.data.playlists.items;
   }
