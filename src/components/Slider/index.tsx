@@ -1,96 +1,48 @@
-// @ts-ignore
-import { Direction, Slider as RPSlider } from 'react-player-controls';
+// components/Slider/index.tsx
+import * as SliderPrimitive from '@radix-ui/react-slider';
+import React from 'react';
+import './Slider.css'; // file CSS riêng
 
-const SliderBar = ({
-  value,
-  style,
-  className,
-}: {
-  value: number;
-  style?: React.CSSProperties;
-  className: string;
-  direction: Direction;
-}) => (
-  <div
-    className={className}
-    style={Object.assign(
-      {},
-      {
-        position: 'absolute',
-        borderRadius: 4,
-      },
-      {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        width: `${value * 100}%`,
-      },
-      style
-    )}
-  />
-);
-
-const SliderHandle = ({
-  value,
-  style,
-  className,
-}: {
-  value: number;
-  style?: React.CSSProperties;
-  className: string;
-  direction: Direction;
-}) => (
-  <div
-    className={className}
-    style={Object.assign(
-      {},
-      {
-        position: 'absolute',
-        width: 10,
-        height: 10,
-        borderRadius: '100%',
-        transform: 'scale(1)',
-        transition: 'transform 0.2s',
-        '&:hover': {
-          transform: 'scale(1.3)',
-        },
-      },
-      {
-        top: 0,
-        left: `${value * 100}%`,
-        marginTop: -3,
-        marginLeft: -8,
-      },
-      style
-    )}
-  />
-);
-
-export const Slider = ({
-  isEnabled,
-  direction = Direction.HORIZONTAL,
-  value,
-  ...props
-}: {
+type SliderProps = {
   isEnabled: boolean;
-  direction?: Direction;
   value: number;
   onChangeStart?: () => void;
   onChange: (value: number) => void;
   onChangeEnd?: (value: number) => void;
-}) => {
+  className?: string;
+};
+
+export const Slider = ({
+  isEnabled,
+  value,
+  onChangeStart,
+  onChange,
+  onChangeEnd,
+  className = '',
+}: SliderProps) => {
+  const handleChange = (val: number[]) => {
+    onChange(val[0]);
+  };
+
   return (
-    <div className='volume-sider-container'>
-      <RPSlider
-        isEnabled={isEnabled}
-        direction={direction}
-        className='volume-sider'
-        style={{ cursor: 'pointer' }}
-        {...props}
+    <div
+      className={`slider-container ${!isEnabled ? 'slider-disabled' : ''} ${className}`}
+    >
+      <SliderPrimitive.Root
+        className="slider-root"
+        min={0}
+        max={1}
+        step={0.01}
+        value={[value]}
+        onValueChange={handleChange}
+        onPointerDown={onChangeStart}
+        onValueCommit={(val) => onChangeEnd?.(val[0])}
       >
-        <SliderBar className='position-sider' direction={direction} value={value} />
-        <SliderHandle className='handler-sider' direction={direction} value={value} />
-      </RPSlider>
+        <SliderPrimitive.Track className="slider-track">
+          <SliderPrimitive.Range className="slider-range" />
+        </SliderPrimitive.Track>
+        <SliderPrimitive.Thumb className="slider-thumb" />
+      </SliderPrimitive.Root>
     </div>
   );
 };

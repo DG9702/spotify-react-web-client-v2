@@ -1,0 +1,51 @@
+.slider-container {
+    width: 100%;
+    height: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slider-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .slider-root {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 16px;
+    touch-action: none;
+  }
+  
+  .slider-track {
+    background-color: #ccc;
+    position: relative;
+    flex-grow: 1;
+    height: 4px;
+    border-radius: 9999px;
+  }
+  
+  .slider-range {
+    background-color: #22c55e; /* xanh lá */
+    position: absolute;
+    height: 100%;
+    border-radius: 9999px;
+  }
+  
+  .slider-thumb {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .slider-thumb:hover {
+    transform: scale(1.2);
+  }
+  

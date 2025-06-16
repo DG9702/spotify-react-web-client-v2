@@ -9,7 +9,7 @@ import { editPlaylistModalActions } from '../../store/slices/editPlaylistModal';
 import { useTranslation } from 'react-i18next';
 
 // Interfaces
-import { RefObject, useEffect, useMemo, useState, type FC } from 'react';
+import { useEffect, useMemo, useState, type FC } from 'react';
 
 // Constants
 import { ARTISTS_DEFAULT_IMAGE, PLAYLIST_DEFAULT_IMAGE } from '../../constants/spotify';

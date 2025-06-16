@@ -47,17 +47,15 @@ export const VolumeControls = () => {
         </Tooltip>
 
         <div className='flex items-center justify-between w-full' style={{ width: 90 }}>
-          <Slider
-            isEnabled
-            value={muted ? 0 : volume}
-            onChange={(value) => {
-              setVolume(value);
-            }}
-            onChangeEnd={(value) => {
-              setVolume(value);
-              playerService.setVolume(Math.round(value * 100)).then();
-            }}
-          />
+        <Slider
+          isEnabled={true}
+          value={muted ? 0 : volume}
+          onChange={(v) => setVolume(v)}
+          onChangeEnd={(v) => {
+            setVolume(v);
+            playerService.setVolume(Math.round(v * 100));
+          }}
+        />
         </div>
       </Space>
     </div>

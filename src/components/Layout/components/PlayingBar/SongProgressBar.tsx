@@ -34,21 +34,16 @@ const SongProgressBar = () => {
         {state && state.position ? msToTime(state.position) : '0:00'}
       </div>
       <div style={{ width: '100%' }}>
-        <Slider
-          isEnabled
+      <Slider
+          isEnabled={true}
           value={value}
-          onChangeStart={() => {
-            setSelecting(true);
-          }}
-          onChange={(value) => {
-            setValue(value);
-          }}
-          onChangeEnd={(value) => {
+          onChangeStart={() => setSelecting(true)}
+          onChange={(v) => setValue(v)}
+          onChangeEnd={(v) => {
             setSelecting(false);
             if (!state) return;
-            setValue(value);
-            const newPosition = Math.round(state.duration * value);
-            playerService.seekToPosition(newPosition).then();
+            const newPosition = Math.round(state.duration * v);
+            playerService.seekToPosition(newPosition);
           }}
         />
       </div>
