@@ -1,4 +1,4 @@
-import { FC, memo, RefObject, useRef } from 'react';
+import { FC, memo, useRef } from 'react';
 
 import DiscographyContent from './content';
 import ArtistDicographyHoverableMenu from './scrollHoverable';
@@ -7,7 +7,7 @@ import ArtistDicographyHoverableMenu from './scrollHoverable';
 import { DEFAULT_PAGE_COLOR } from '../../../constants/spotify';
 
 interface ArtistDicographyPageProps {
-  container: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
 }
 
 export const ArtistDiscographyContainer: FC<ArtistDicographyPageProps> = memo((props) => {

@@ -1,4 +1,4 @@
-import { FC, memo, RefObject } from 'react';
+import { FC, memo } from 'react';
 import { PageHeader } from '../../../components/Layout/components/Header';
 import { useAppSelector } from '../../../store/store';
 import { PlayCircleButton } from './controls/playCircle';
@@ -6,8 +6,8 @@ import { Space } from 'antd';
 
 interface ArtistPageProps {
   color: string;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer: React.RefObject<HTMLDivElement | null>;
 }
 
 export const ArtistHoverableMenu: FC<ArtistPageProps> = memo((props) => {

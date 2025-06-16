@@ -7,12 +7,12 @@ import { NewReleases } from '../components/newReleases';
 import { FeaturePlaylists } from '../components/featurePlaylists';
 
 // Utils
-import { FC, memo, RefObject, useRef, useState } from 'react';
+import { FC, memo, useRef, useState } from 'react';
 import { RecentlyPlayed } from '../components/recentlyPlayed';
 import { TopMixes } from '../components/topMixes';
 
 interface HomePageContainerProps {
-  container: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
 }
 
 const HomePageContainer: FC<HomePageContainerProps> = memo((props) => {

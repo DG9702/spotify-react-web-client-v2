@@ -5,14 +5,14 @@ import { LikedSongsHeader } from './header';
 // Utils
 import tinycolor from 'tinycolor2';
 import { getImageAnalysis2 } from '../../utils/imageAnyliser';
-import { FC, RefObject, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 // Constants
 import { DEFAULT_PAGE_COLOR, LIKED_SONGS_IMAGE } from '../../constants/spotify';
 import { useAppDispatch } from '../../store/store';
 import { likedSongsActions } from '../../store/slices/likedSongs';
 
-const LikedSongsPage: FC<{ container: RefObject<HTMLDivElement> }> = (props) => {
+const LikedSongsPage: FC<{ container: React.RefObject<HTMLDivElement | null> }> = (props) => {
   const dispatch = useAppDispatch();
   const containerRef = useRef<HTMLDivElement>(null);
 

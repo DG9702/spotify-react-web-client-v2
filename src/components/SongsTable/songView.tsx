@@ -1,9 +1,9 @@
+import type { JSX } from 'react';
 import { Tooltip } from 'antd';
 import ReactTimeAgo from 'react-time-ago';
 import { useCallback, useMemo } from 'react';
 import { MenuIcon, Pause, Play } from '../Icons';
 import { TrackActionsWrapper } from '../Actions/TrackActions';
-
 // Utils
 import { msToTime } from '../../utils';
 import { useTranslation } from 'react-i18next';

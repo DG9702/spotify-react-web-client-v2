@@ -1,5 +1,5 @@
 import { Space } from 'antd';
-import { FC, RefObject } from 'react';
+import { FC } from 'react';
 import Chip from '../../../../components/Chip';
 import { PageHeader } from '../../../../components/Layout/components/Header';
 
@@ -12,8 +12,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 interface HomeHeaderProps {
   color: string;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer: React.RefObject<HTMLDivElement | null>;
 }
 
 const SECTIONS = ['ALL', 'ARTISTS', 'TRACKS', 'ALBUMS', 'PLAYLISTS'];

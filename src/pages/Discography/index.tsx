@@ -1,4 +1,4 @@
-import { FC, memo, RefObject, useEffect } from 'react';
+import { FC, memo, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom';
 import { useAppDispatch } from '../../store/store';
@@ -6,7 +6,7 @@ import ArtistDiscographyContainer from './container';
 import { artistDiscographyActions } from '../../store/slices/discography';
 
 interface ArtistDicographyPageProps {
-  container: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
 }
 
 export const ArtistDiscography: FC<ArtistDicographyPageProps> = memo((props) => {

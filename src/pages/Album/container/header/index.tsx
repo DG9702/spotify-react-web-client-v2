@@ -20,12 +20,12 @@ import { sumTracksLength } from '../../../../utils/spotify/sumTracksLength';
 import { ARTISTS_DEFAULT_IMAGE } from '../../../../constants/spotify';
 
 // Interfaces
-import { RefObject, useEffect, useState, type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 
 interface AlbumHeaderProps {
   color: string;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer?: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer?: React.RefObject<HTMLDivElement | null>;
 }
 
 export const AlbumHeader: FC<AlbumHeaderProps> = ({ container, sectionContainer, color }) => {

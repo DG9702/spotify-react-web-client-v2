@@ -1,4 +1,4 @@
-import { FC, memo, RefObject, useEffect, useRef, useState } from 'react';
+import { FC, memo, useEffect, useRef, useState } from 'react';
 
 // Utils
 import tinycolor from 'tinycolor2';
@@ -14,7 +14,7 @@ import { ArtistHeader } from './container/header';
 import ArtistHoverableMenu from './container/scrollHoverable';
 
 interface ArtistPageProps {
-  container: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
 }
 
 export const ArtistPage: FC<ArtistPageProps> = memo((props) => {

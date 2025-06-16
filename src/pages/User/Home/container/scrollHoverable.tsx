@@ -1,12 +1,12 @@
 import { Space } from 'antd';
-import { FC, memo, RefObject } from 'react';
+import { FC, memo } from 'react';
 import { useAppSelector } from '../../../../store/store';
 import { PageHeader } from '../../../../components/Layout/components/Header';
 
 interface ArtistPageProps {
   color: string;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer: React.RefObject<HTMLDivElement | null>;
 }
 
 export const UserHoverableMenu: FC<ArtistPageProps> = memo((props) => {

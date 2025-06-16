@@ -1,5 +1,5 @@
 // Interfaces
-import { RefObject, useEffect, useState, type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 
 // Utils
 import tinycolor from 'tinycolor2';
@@ -12,8 +12,8 @@ interface PageHeaderProps {
   activeHeider?: number;
   hiddenContent?: boolean;
   activeContentHeight?: number;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer?: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer?: React.RefObject<HTMLDivElement | null>;
 }
 
 export const PageHeader: FC<PageHeaderProps> = ({

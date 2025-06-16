@@ -13,7 +13,7 @@ const INITIAL_VALUE = window.location.href.includes('/search/')
   : '';
 
 function usePrevious(value: any) {
-  const ref = useRef();
+  const ref = useRef<any>(null);
   useEffect(() => {
     ref.current = value;
   });

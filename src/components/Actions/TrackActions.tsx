@@ -83,10 +83,6 @@ export const TrackActionsWrapper: FC<TrackActionsWrapperProps> = memo((props) =>
       });
   }, [dispatch, myPlaylists, playlist, track.uri, t]);
 
-  console.log("Check my playlist: ", myPlaylists);
-    console.log("Check options: ", options);
-
-
   const getItems = () => {
     const items: MenuProps['items'] = [
       {
@@ -164,10 +160,7 @@ export const TrackActionsWrapper: FC<TrackActionsWrapperProps> = memo((props) =>
           }
         },
       });
-    }
-
-    console.log("Check canEdit: ", canEdit, playlist);
-    
+    }    
 
     if (canEdit && playlist) {
       items.push({

@@ -1,5 +1,5 @@
 import { Space } from 'antd';
-import { FC, memo, RefObject } from 'react';
+import { FC, memo } from 'react';
 import Chip from '../../../../components/Chip';
 import { PageHeader } from '../../../../components/Layout/components/Header';
 
@@ -12,8 +12,8 @@ import { useAppDispatch, useAppSelector } from '../../../../store/store';
 
 interface HomeHeaderProps {
   color: string;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer: React.RefObject<HTMLDivElement | null>;
 }
 
 const SECTIONS = ['ALL', 'MUSIC', 'PODCASTS'];

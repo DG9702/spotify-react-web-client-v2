@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { FC, memo } from 'react';
+import { JSX, FC, memo } from 'react';
 import { Clock } from '../Icons';
 
 interface ItemProps {

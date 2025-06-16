@@ -1,4 +1,4 @@
-import { FC, memo, RefObject, useMemo, useState } from 'react';
+import { FC, memo, useMemo, useState } from 'react';
 
 // Components
 import { Dropdown, Flex, Space } from 'antd';
@@ -14,8 +14,8 @@ import { artistDiscographyActions } from '../../../store/slices/discography';
 
 interface ArtistPageProps {
   color: string;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer: React.RefObject<HTMLDivElement | null>;
 }
 
 const FilterSection = memo(() => {

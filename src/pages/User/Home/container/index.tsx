@@ -1,4 +1,4 @@
-import { FC, RefObject, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../../../store/store';
 import { DEFAULT_PAGE_COLOR } from '../../../../constants/spotify';
 import UserHoverableMenu from './scrollHoverable';
@@ -10,7 +10,7 @@ import { MyPlaylistsSection } from '../components/playlists';
 import { Songs } from '../components/songs';
 
 interface ProfilePageProps {
-  container: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
 }
 
 export const ProfileContainer: FC<ProfilePageProps> = (props) => {

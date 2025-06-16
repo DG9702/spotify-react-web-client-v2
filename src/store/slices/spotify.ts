@@ -39,9 +39,7 @@ export const setState = createAsyncThunk<
 
   const response = await userService.checkSavedTracks([
     spotifyState.track_window.current_track.id!,
-  ]);
-  console.log('Check spotify state: ', spotifyState, response);
-  
+  ]);  
   return [spotifyState, response.data[0]];
 });
 

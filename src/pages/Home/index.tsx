@@ -1,5 +1,5 @@
 // Utils
-import { FC, RefObject, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
 // Components
 import HomePageContainer from './container';
@@ -9,7 +9,7 @@ import { useAppDispatch } from '../../store/store';
 import { homeActions } from '../../store/slices/home';
 
 interface HomeProps {
-  container: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
 }
 
 const Home: FC<HomeProps> = (props) => {

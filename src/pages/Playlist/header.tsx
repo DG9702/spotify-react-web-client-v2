@@ -25,8 +25,8 @@ import { useAppDispatch, useAppSelector } from '../../store/store';
 
 interface PlaylistHeaderProps {
   color: string;
-  container: RefObject<HTMLDivElement>;
-  sectionContainer: RefObject<HTMLDivElement>;
+  container: React.RefObject<HTMLDivElement | null>;
+  sectionContainer: React.RefObject<HTMLDivElement | null>;
 }
 
 export const PlaylistHeader: FC<PlaylistHeaderProps> = ({ container, color, sectionContainer }) => {
